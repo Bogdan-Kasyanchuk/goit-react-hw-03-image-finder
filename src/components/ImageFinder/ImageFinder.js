@@ -58,10 +58,8 @@ class ImageFinder extends Component {
       .catch(error => {
         this.setState({ status: null });
         Toastify('error', `${error}`);
-      })
-      .finally(() => {
-        scrollBottom();
       });
+    if (prevState.searchQuery === searchQuery) scrollBottom();
   }
 
   handleFormSubmit = searchQuery => {
@@ -94,7 +92,6 @@ class ImageFinder extends Component {
 
   render() {
     const { images, status, showModal, alt, fullSize } = this.state;
-    console.log(status);
     return (
       <div className={styles['image-finder']}>
         <SearchBar onSubmit={this.handleFormSubmit} />
@@ -109,7 +106,7 @@ class ImageFinder extends Component {
             onClick={this.getLoadMore}
           />
         )}
-        {images.length > 0 && (
+        {images.length > 11 && (
           <Button name={'To UP'} nameClass="up-button" onClick={scrollTop} />
         )}
         {showModal && (

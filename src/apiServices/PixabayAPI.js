@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import axios from 'axios';
 
 const parameters = {
@@ -12,11 +11,6 @@ const fetchApi = async (searchQuery, page) => {
   );
   if (response.status === 200) return response.data.hits;
   throw new Error(response.status);
-};
-
-fetchApi.propTypes = {
-  searchQuery: PropTypes.string.isRequired,
-  page: PropTypes.number.isRequired,
 };
 
 export default fetchApi;
