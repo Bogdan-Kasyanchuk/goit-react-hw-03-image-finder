@@ -94,6 +94,7 @@ class ImageFinder extends Component {
 
   render() {
     const { images, status, showModal, alt, fullSize } = this.state;
+    console.log(status);
     return (
       <div className={styles['image-finder']}>
         <SearchBar onSubmit={this.handleFormSubmit} />
@@ -101,7 +102,7 @@ class ImageFinder extends Component {
         {status === 'resolved' && (
           <ImageGallery images={images} onClick={this.handleClick} />
         )}
-        {images.length > 11 && (
+        {images.length > 11 && status === 'resolved' && (
           <Button
             name={'Load more'}
             nameClass="load-button"
