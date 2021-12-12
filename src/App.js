@@ -1,28 +1,16 @@
-import Container from 'components/Container/Container';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Container from 'components/Container';
+import ImageFinder from 'components/ImageFinder';
 
 function App() {
   return (
-    <Container>
-      <h1
-        style={{
-          color: 'red',
-          fontSize: '50px',
-          textAlign: 'center',
-          marginBottom: '50px',
-        }}
-      >
-        Поиск изображений
-      </h1>
-      <h2
-        style={{
-          color: 'blue',
-          fontSize: '50px',
-          textAlign: 'center',
-        }}
-      >
-        Pixabay API
-      </h2>
-    </Container>
+    <>
+      <Container>
+        <ImageFinder />
+      </Container>
+      <ToastContainer />
+    </>
   );
 }
 
