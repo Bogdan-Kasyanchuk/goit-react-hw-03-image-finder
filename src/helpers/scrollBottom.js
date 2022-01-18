@@ -1,5 +1,4 @@
 const scrollBottom = () => {
-  console.log('3423423');
   let offsetHeight = document.documentElement.offsetHeight - 965;
   window.scrollTo({
     top: offsetHeight,
